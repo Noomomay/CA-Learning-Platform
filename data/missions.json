@@ -1,11 +1,13 @@
 {
   "meta": {
-    "appName": "Credit Investigation Simulator PRO v2",
-    "playerDefault": "Wittanee"
+    "appName": "Credit Investigation Simulator PRO v3.1 FINAL",
+    "subtitle": "Real Document Mapping Fixed",
+    "playerDefault": "Wittanee",
+    "teamDefault": "Credit Analyst"
   },
   "case": {
     "id": "CASE-001",
-    "title": "แฟ้มสินเชื่อต้องสงสัย",
+    "title": "Workshop 1: ตรวจสอบเอกสารลูกค้า",
     "vehicle": "Toyota Revo Used Car",
     "amount": "750,000 บาท",
     "riskGrade": "N0",
@@ -13,12 +15,11 @@
     "customer": {
       "ชื่อผู้เช่าซื้อ": "นางหมีน้อย คอยรัก",
       "วันเกิด": "14 ม.ค. 2523",
-      "อายุ": "46 ปี",
       "อาชีพ": "พนักงานขับรถ",
       "อายุงาน": "16 ปี",
       "ลักษณะรายได้": "รับเงินสด",
       "ประกันสังคม": "ไม่พบข้อมูล",
-      "รถที่ขอสินเชื่อ": "Toyota Revo Used Car",
+      "รถที่ขอสินเชื่อ": "USED CAR TOY Revo",
       "วงเงิน": "750,000 บาท",
       "Risk Grade": "N0"
     }
@@ -27,32 +28,26 @@
     {
       "id": "M01",
       "icon": "📂",
-      "thaiTitle": "คัดกรองเคสเบื้องต้น",
-      "title": "Case Triage",
-      "competency": "การคัดกรองข้อมูลลูกค้า",
-      "story": "ฝ่ายขายส่งแฟ้มลูกค้าเข้ามา คุณต้องประเมินเบื้องต้นก่อนส่งเข้ากระบวนการเครดิต",
-      "visual": [
-        "📁",
-        "🔎",
-        "📄",
-        "👩‍💼",
-        "⚠️"
-      ],
-      "showCustomerProfile": true,
-      "actionQuestion": "หากคุณเป็น Credit Analyst คุณจะดำเนินการอย่างไร?",
+      "thaiTitle": "ตรวจสอบ Customer Profile",
+      "title": "Customer Profile",
+      "competency": "การอ่านข้อมูลตั้งต้นของเคส",
+      "story": "เริ่มจากอ่านข้อมูลลูกค้าและรายการเอกสารแนบ เพื่อประเมินว่าควรตรวจสอบจุดใดก่อน",
+      "image": "assets/documents/doc_02.png",
+      "documentLabel": "Customer Profile",
+      "actionQuestion": "หลังอ่าน Customer Profile คุณควรดำเนินการอย่างไรเป็นลำดับแรก?",
       "actions": [
-        "Proceed ส่งเข้า Credit Process ต่อได้เลย",
-        "Hold เพื่อ Verify ข้อมูลเพิ่มเติม",
-        "Reject ปฏิเสธทันที",
-        "ส่ง Supervisor Review โดยยังไม่วิเคราะห์"
+        "Proceed อนุมัติได้ทันที เพราะ Risk Grade เป็น N0",
+        "เริ่มตรวจเอกสารแนบทีละรายการก่อนตัดสินใจ",
+        "Reject ทันที เพราะรายได้รับเงินสด",
+        "ส่ง Supervisor Review โดยไม่ต้องตรวจเอง"
       ],
       "bestAction": 1,
-      "reasonQuestion": "เลือกเหตุผลประกอบการตัดสินใจ",
+      "reasonQuestion": "เลือกเหตุผลที่ควรนำไปตรวจสอบต่อ",
       "reasons": [
-        "รายได้รับเงินสด ต้องตรวจหลักฐานรองรับ",
+        "รายได้รับเงินสด ต้องมีเอกสาร/หลักฐานรองรับ",
         "ไม่พบสิทธิประกันสังคม ควร Verify แหล่งรายได้",
         "อายุงาน 16 ปี ต้องเทียบกับหนังสือรับรอง",
-        "ที่อยู่บ้านและที่ทำงานอยู่ห่างกัน ควรดูความสมเหตุสมผล",
+        "มีเอกสารหลายชุดที่ต้องตรวจความสอดคล้อง",
         "Risk Grade N0 จึงไม่ต้องตรวจเพิ่ม"
       ],
       "bestReasons": [
@@ -61,29 +56,21 @@
         2,
         3
       ],
-      "feedback": "เหมาะสมที่สุดคือ Hold เพื่อ Verify เพิ่ม ไม่ควร Reject ทันที แต่ต้องตรวจความน่าเชื่อถือของรายได้และเอกสารประกอบ",
-      "tip": "คิดแบบ Credit Analyst: Observe → Analyze → Decide → Justify",
-      "image": "assets/documents/M01.png",
-      "documentLabel": "Customer Profile"
+      "feedback": "ควรเริ่มจากตรวจเอกสารแนบและความสอดคล้องของข้อมูล ไม่ควรสรุปจาก Risk Grade เพียงอย่างเดียว",
+      "hint": "ดูข้อมูลรายได้ อายุงาน ประกันสังคม และรายการเอกสารแนบก่อนตัดสินใจ"
     },
     {
       "id": "M02",
       "icon": "📄",
       "thaiTitle": "ตรวจสอบ Consent",
-      "title": "Consent & Authorization",
-      "competency": "ความถูกต้องของ Consent",
-      "story": "คุณเปิด Consent ก่อนเริ่มตรวจเครดิต ต้องตัดสินใจว่าเอกสารนี้ใช้ต่อได้หรือไม่",
-      "visual": [
-        "📄",
-        "🖊️",
-        "✅",
-        "🔍",
-        "⚖️"
-      ],
-      "showCustomerProfile": false,
-      "actionQuestion": "หากคุณเป็น Credit Analyst คุณจะดำเนินการอย่างไร?",
+      "title": "Consent Verification",
+      "competency": "ความถูกต้องของแบบฟอร์ม Consent",
+      "story": "คุณเปิดแบบฟอร์ม Consent ก่อนเริ่มตรวจเครดิต ต้องตัดสินใจว่าเอกสารนี้ใช้ต่อได้หรือไม่",
+      "image": "assets/documents/doc_03.png",
+      "documentLabel": "Consent Form",
+      "actionQuestion": "หากพบว่า Consent ไม่ใช่ Version ที่กำหนด คุณควรทำอย่างไร?",
       "actions": [
-        "ใช้ต่อได้หากลูกค้าลงนามแล้ว",
+        "ใช้ต่อได้ หากลูกค้าลงนามแล้ว",
         "ส่งกลับฝ่ายขายแก้ไข Version ก่อน",
         "ให้ฝ่ายขายยืนยันทางแชทแทน",
         "Proceed ต่อ แต่บันทึก Remark"
@@ -100,41 +87,33 @@
         0,
         1
       ],
-      "feedback": "ต้องส่งกลับแก้ไข Version ก่อนดำเนินการต่อ เพราะ Consent เป็นเอกสารความยินยอมที่ต้องใช้แบบฟอร์มถูกต้อง",
-      "tip": "คิดแบบ Credit Analyst: Observe → Analyze → Decide → Justify",
-      "image": "assets/documents/M02.png",
-      "documentLabel": "Consent Form"
+      "feedback": "ต้องส่งกลับฝ่ายขายแก้ไข Version ก่อน เพราะ Consent เป็นเอกสารความยินยอมที่ต้องใช้แบบฟอร์มที่ถูกต้อง",
+      "hint": "จุดสำคัญคือ Version ของแบบฟอร์ม ไม่ใช่ดูเฉพาะว่าลูกค้าเซ็นแล้ว"
     },
     {
       "id": "M03",
       "icon": "🪪",
       "thaiTitle": "ตรวจสอบบัตรประชาชน",
-      "title": "ID Verification",
-      "competency": "การตรวจจับความผิดปกติของเอกสาร",
-      "story": "คุณตรวจบัตรประชาชนและพบจุดที่อาจผิดปกติ ต้องตัดสินใจว่าจะยอมรับเอกสารนี้หรือไม่",
-      "visual": [
-        "🪪",
-        "🔎",
-        "❗",
-        "📆",
-        "🔐"
-      ],
-      "showCustomerProfile": false,
-      "actionQuestion": "หากคุณเป็น Credit Analyst คุณจะดำเนินการอย่างไร?",
+      "title": "ID Card Verification",
+      "competency": "การตรวจจับความผิดปกติของเอกสารประจำตัว",
+      "story": "คุณตรวจบัตรประชาชนของลูกค้า ต้องประเมินว่ามีจุดผิดปกติหรือไม่",
+      "image": "assets/documents/doc_04.png",
+      "documentLabel": "Thai National ID Card",
+      "actionQuestion": "เอกสารนี้ควรถูกจัดการอย่างไร?",
       "actions": [
         "Accept ใช้ต่อได้",
         "Request New ID / Verify เพิ่ม",
         "Reject เคสทันที",
-        "ไม่ต้องตรวจเพราะมีสำเนาแล้ว"
+        "ไม่ต้องตรวจ เพราะมีสำเนาแล้ว"
       ],
       "bestAction": 1,
-      "reasonQuestion": "เลือกเหตุผลประกอบการตัดสินใจ",
+      "reasonQuestion": "เหตุผลที่ควร Verify เพิ่มคืออะไร?",
       "reasons": [
-        "วันหมดอายุบัตรไม่ตรงหลักเกณฑ์",
-        "ปีหมดอายุบัตรไม่ตรงหลักเกณฑ์",
-        "Font ที่อยู่ไม่เหมือนส่วนอื่น",
-        "ไม่มีแถบรหัสใต้บัตร",
-        "รูปไม่ชัดเท่านั้น ไม่มีผล"
+        "ข้อมูลวันออกบัตร/วันหมดอายุควรสอดคล้องกับใบสมัคร",
+        "ชื่อไทย/อังกฤษควรตรงกับเอกสารอื่น",
+        "รูปแบบเอกสารและข้อมูลควรดูสมเหตุสมผล",
+        "เอกสารประจำตัวเป็นข้อมูลตั้งต้นของเคส",
+        "ถ่ายรูปชัดอย่างเดียวก็เพียงพอ"
       ],
       "bestReasons": [
         0,
@@ -142,41 +121,33 @@
         2,
         3
       ],
-      "feedback": "ควรขอเอกสารใหม่หรือ Verify เพิ่ม เพราะเอกสารประจำตัวมีหลายจุดที่ต้องตรวจสอบ",
-      "tip": "คิดแบบ Credit Analyst: Observe → Analyze → Decide → Justify",
-      "image": "assets/documents/M03.png",
-      "documentLabel": "ID Card"
+      "feedback": "ควร Verify เพิ่ม เพราะข้อมูลบนบัตรต้องสอดคล้องกับใบสมัครและเอกสารอื่นก่อนนำไปใช้พิจารณา",
+      "hint": "เทียบข้อมูลบัตรกับใบสมัคร เช่น ชื่อ วันเกิด วันออกบัตร วันหมดอายุ และที่อยู่"
     },
     {
       "id": "M04",
       "icon": "📝",
-      "thaiTitle": "ตรวจใบสมัคร",
+      "thaiTitle": "ตรวจสอบใบสมัคร",
       "title": "Application Review",
-      "competency": "ความสอดคล้องของใบสมัคร",
-      "story": "คุณตรวจใบสมัครและต้องดูว่าข้อมูลครบพอสำหรับการ Verify หรือไม่",
-      "visual": [
-        "📝",
-        "☎️",
-        "📍",
-        "🧾",
-        "🖊️"
-      ],
-      "showCustomerProfile": false,
-      "actionQuestion": "หากคุณเป็น Credit Analyst คุณจะดำเนินการอย่างไร?",
+      "competency": "ความครบถ้วนและความสอดคล้องของใบสมัคร",
+      "story": "คุณตรวจใบสมัครของลูกค้า ต้องดูว่าข้อมูลเพียงพอสำหรับการ Verify หรือไม่",
+      "image": "assets/documents/doc_05.png",
+      "documentLabel": "Application Form",
+      "actionQuestion": "ควรดำเนินการอย่างไรกับใบสมัครนี้?",
       "actions": [
         "Proceed เพราะมีข้อมูลหลักครบ",
         "Return to Sales เพื่อแก้ไข/เติมข้อมูล",
         "Reject เคส",
-        "ข้ามการ Verify เพราะมีเอกสารแนบ"
+        "ข้ามการ Verify เพราะมีเอกสารแนบแล้ว"
       ],
       "bestAction": 1,
-      "reasonQuestion": "เลือกเหตุผลประกอบการตัดสินใจ",
+      "reasonQuestion": "ประเด็นใดควรตรวจสอบหรือแก้ไข?",
       "reasons": [
-        "ควรระบุเวลาที่สะดวกติดต่อ",
-        "ควรยืนยันพิกัดบ้าน/ที่ทำงาน",
-        "ที่อยู่ที่ทำงานไม่ถูกต้องหรือซ้ำกับที่อยู่อื่น",
-        "วันออกบัตร/ปีหมดอายุไม่ตรงหลักเกณฑ์",
-        "ข้อมูลครบแล้ว"
+        "ช่วงเวลาที่สะดวกติดต่อไม่ควรเป็น 00:00 ถึง 00:00 โดยไม่มีคำอธิบาย",
+        "ที่อยู่หลายช่องซ้ำกัน ควรตรวจว่าถูกต้องจริงหรือไม่",
+        "เบอร์โทรศัพท์ควรนำไปใช้ Verify ได้",
+        "ข้อมูลบัตรควรสอดคล้องกับบัตรประชาชน",
+        "เอกสารแนบครบ จึงไม่ต้องดูใบสมัคร"
       ],
       "bestReasons": [
         0,
@@ -184,166 +155,135 @@
         2,
         3
       ],
-      "feedback": "ใบสมัครต้องช่วยให้ Credit ตรวจสอบได้ ข้อมูลไม่ครบหรือไม่สอดคล้องควรส่งกลับแก้ไข",
-      "tip": "คิดแบบ Credit Analyst: Observe → Analyze → Decide → Justify",
-      "image": "assets/documents/M04.png",
-      "documentLabel": "Application Form"
+      "feedback": "ใบสมัครควรถูกส่งกลับเพื่อเติมหรือยืนยันข้อมูลบางจุด เพราะข้อมูลต้องช่วยให้ Credit Verify ได้จริง",
+      "hint": "ดูช่องที่อยู่ เวลาติดต่อ เบอร์โทร และข้อมูลบัตรว่าใช้ตรวจสอบต่อได้จริงหรือไม่"
     },
     {
       "id": "M05",
-      "icon": "🗺️",
-      "thaiTitle": "ตรวจแผนที่",
-      "title": "Map Verification",
-      "competency": "การตรวจสอบพิกัด",
-      "story": "คุณต้องตรวจว่าแผนที่บ้านและที่ทำงานมีข้อมูลเพียงพอต่อการยืนยันตำแหน่งหรือไม่",
-      "visual": [
-        "🗺️",
-        "📍",
-        "🏠",
-        "🏢",
-        "🔎"
-      ],
-      "showCustomerProfile": false,
-      "actionQuestion": "หากคุณเป็น Credit Analyst คุณจะดำเนินการอย่างไร?",
+      "icon": "💼",
+      "thaiTitle": "ตรวจสอบข้อมูลอาชีพและรายได้ในใบสมัคร",
+      "title": "Occupation & Income Review",
+      "competency": "การวิเคราะห์แหล่งรายได้เบื้องต้น",
+      "story": "คุณตรวจข้อมูลอาชีพ รายได้ และข้อมูลสถานที่ทำงานจากใบสมัคร",
+      "image": "assets/documents/doc_06.png",
+      "documentLabel": "Occupation / Income Information",
+      "actionQuestion": "ข้อมูลอาชีพและรายได้ควรประเมินอย่างไร?",
       "actions": [
-        "ใช้ภาพแผนที่อย่างเดียวก็พอ",
-        "ต้องมี Google Map พร้อม Latitude / Longitude",
-        "ระบุแค่ชื่อสถานที่ใกล้เคียงก็พอ",
-        "ไม่จำเป็นต้องตรวจพิกัด"
+        "ใช้ได้ทันที เพราะระบุรายได้ 25,000 บาท",
+        "Verify กับนายจ้างและหนังสือรับรองรายได้เพิ่มเติม",
+        "Reject เพราะไม่มีรายได้อื่น",
+        "ไม่ต้องตรวจ เพราะอายุงาน 16 ปี"
       ],
       "bestAction": 1,
-      "reasonQuestion": "เลือกเหตุผลประกอบการตัดสินใจ",
+      "reasonQuestion": "เหตุผลใดทำให้ต้อง Verify เพิ่ม?",
       "reasons": [
-        "Latitude / Longitude ช่วยยืนยันพิกัดได้ชัดเจน",
-        "ภาพแผนที่อย่างเดียวอาจคลาดเคลื่อน",
-        "ที่ทำงานสัมพันธ์กับแหล่งรายได้",
-        "ชื่อสถานที่ใกล้เคียงแทนพิกัดได้เสมอ"
+        "ลูกค้ารับเงินสด ต้องมีเอกสารรองรับ",
+        "ไม่พบสิทธิประกันสังคมจาก Customer Profile",
+        "ข้อมูลนายจ้างและเบอร์โทรต้องตรวจสอบได้",
+        "อายุงาน 16 ปีควรสัมพันธ์กับหนังสือรับรอง",
+        "มีรายได้ 25,000 บาทจึงไม่ต้องตรวจเพิ่ม"
       ],
       "bestReasons": [
         0,
         1,
-        2
+        2,
+        3
       ],
-      "feedback": "แผนที่ควรมี Google Map พร้อม Latitude / Longitude เพื่อช่วยยืนยันตำแหน่งได้ชัดเจน",
-      "tip": "คิดแบบ Credit Analyst: Observe → Analyze → Decide → Justify",
-      "image": "assets/documents/M05.png",
-      "documentLabel": "Map Verification"
+      "feedback": "ควร Verify เพิ่ม เพราะรายได้รับเงินสดและไม่พบประกันสังคม ต้องตรวจความน่าเชื่อถือของรายได้",
+      "hint": "รายได้รับเงินสดไม่ได้แปลว่า Reject ทันที แต่ต้องมีหลักฐานรองรับที่ตรวจสอบได้"
     },
     {
       "id": "M06",
+      "icon": "🗺️",
+      "thaiTitle": "ตรวจแผนที่บ้าน",
+      "title": "Home Map Verification",
+      "competency": "การตรวจสอบที่อยู่อาศัยและพิกัด",
+      "story": "คุณตรวจแผนที่บ้านของลูกค้า ต้องดูว่าพิกัดและที่อยู่สอดคล้องกับข้อมูลในใบสมัครหรือไม่",
+      "image": "assets/documents/doc_07.png",
+      "documentLabel": "Home Map",
+      "actionQuestion": "แผนที่บ้านนี้ควรนำไปใช้ประกอบการพิจารณาอย่างไร?",
+      "actions": [
+        "ใช้ภาพแผนที่อย่างเดียวก็พอ",
+        "ใช้ได้ แต่ควรตรวจพิกัด/ที่อยู่ให้สอดคล้องกับใบสมัคร",
+        "Reject เพราะเป็นแฟลต",
+        "ไม่จำเป็นต้องตรวจแผนที่บ้าน"
+      ],
+      "bestAction": 1,
+      "reasonQuestion": "ควรตรวจสอบประเด็นใด?",
+      "reasons": [
+        "พิกัด Latitude / Longitude ช่วยยืนยันตำแหน่ง",
+        "ชื่อสถานที่และที่อยู่ใกล้เคียงควรสัมพันธ์กับที่อยู่ลูกค้า",
+        "ควรเทียบกับที่อยู่ในใบสมัคร",
+        "การมีแผนที่ช่วยลดความเสี่ยงด้านที่อยู่",
+        "แค่มีหมุดสีแดงก็เพียงพอเสมอ"
+      ],
+      "bestReasons": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "feedback": "ควรตรวจพิกัดและที่อยู่ให้สอดคล้องกับใบสมัคร ไม่ควรดูเฉพาะภาพแผนที่อย่างเดียว",
+      "hint": "เทียบพิกัดกับที่อยู่ปัจจุบันในใบสมัครและ Customer Profile"
+    },
+    {
+      "id": "M07",
+      "icon": "🏢",
+      "thaiTitle": "ตรวจแผนที่ที่ทำงาน",
+      "title": "Workplace Map Verification",
+      "competency": "การตรวจสอบสถานที่ทำงาน",
+      "story": "คุณตรวจแผนที่ที่ทำงาน ต้องดูว่าพิกัดสถานที่ทำงานสัมพันธ์กับนายจ้างและรายได้หรือไม่",
+      "image": "assets/documents/doc_08.png",
+      "documentLabel": "Workplace Map",
+      "actionQuestion": "ควรดำเนินการอย่างไรกับแผนที่ที่ทำงาน?",
+      "actions": [
+        "ใช้ได้ทันที เพราะมีหมุดแผนที่",
+        "Verify กับข้อมูลนายจ้างและหนังสือรับรองรายได้",
+        "Reject เพราะอยู่คนละจังหวัดกับบ้าน",
+        "ไม่ต้องตรวจ เพราะมีเบอร์โทรนายจ้างแล้ว"
+      ],
+      "bestAction": 1,
+      "reasonQuestion": "เหตุผลใดเหมาะสม?",
+      "reasons": [
+        "ที่ทำงานต้องสัมพันธ์กับนายจ้างในใบสมัคร",
+        "ที่ทำงานอยู่ไกลจากบ้าน ควรดูความสมเหตุสมผล",
+        "ควรเทียบกับหนังสือรับรองรายได้",
+        "ควรมีพิกัดหรือข้อมูลแผนที่ที่ตรวจสอบได้",
+        "อยู่คนละจังหวัดจึงต้อง Reject เสมอ"
+      ],
+      "bestReasons": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "feedback": "ควร Verify กับนายจ้างและหนังสือรับรองรายได้ เพราะแผนที่เป็นเพียงหลักฐานหนึ่งของสถานที่ทำงาน",
+      "hint": "ดูความสัมพันธ์ระหว่างบ้าน ที่ทำงาน นายจ้าง รายได้ และอายุงาน"
+    },
+    {
+      "id": "M08",
       "icon": "🛡️",
       "thaiTitle": "วิเคราะห์ KYC",
       "title": "KYC Risk Assessment",
       "competency": "KYC และพฤติกรรมต้องสงสัย",
-      "story": "คุณตรวจ KYC และต้องประเมินว่ามี Warning Sign ที่ควรตรวจเชิงลึกหรือไม่",
-      "visual": [
-        "🛡️",
-        "🕵️",
-        "❓",
-        "👥",
-        "📌"
-      ],
-      "showCustomerProfile": false,
-      "actionQuestion": "หากคุณเป็น Credit Analyst คุณจะดำเนินการอย่างไร?",
+      "story": "คุณต้องประเมินว่าจากข้อมูลลูกค้าควรกรอก KYC อย่างไร และมี Warning Sign หรือไม่",
+      "image": "assets/documents/doc_09.png",
+      "documentLabel": "KYC Form",
+      "actionQuestion": "ควรให้สถานะ KYC อย่างไร?",
       "actions": [
-        "Low Risk ดำเนินการต่อได้",
-        "Need Deep Verification",
+        "Low Risk ดำเนินการต่อได้ทันที",
+        "Need Deep Verification / ระบุประเด็นต้องสงสัย",
         "Reject ทันที",
         "ไม่ต้องดู KYC หากเอกสารครบ"
       ],
       "bestAction": 1,
-      "reasonQuestion": "เลือกเหตุผลประกอบการตัดสินใจ",
+      "reasonQuestion": "ควร Follow-up ประเด็นใด?",
       "reasons": [
-        "ควรระบุพฤติกรรมต้องสงสัย",
-        "ลูกค้าไม่มีใบขับขี่กรณีออกรถกระบะ",
-        "ควรระบุอื่น ๆ ให้ Credit ตรวจเชิงลึก",
-        "เอกสารครบจึงไม่ต้อง KYC",
-        "KYC ใช้บันทึก Warning Sign"
-      ],
-      "bestReasons": [
-        0,
-        1,
-        2,
-        4
-      ],
-      "feedback": "KYC ไม่ใช่แค่เอกสารแนบ แต่เป็นเครื่องมือจับ Warning Sign และช่วยให้ Credit ตรวจเชิงลึก",
-      "tip": "คิดแบบ Credit Analyst: Observe → Analyze → Decide → Justify",
-      "image": "assets/documents/M06.png",
-      "documentLabel": "KYC Form"
-    },
-    {
-      "id": "M07",
-      "icon": "📑",
-      "thaiTitle": "ตรวจหนังสือรับรองรายได้",
-      "title": "Employment Verification",
-      "competency": "การตรวจสอบรายได้",
-      "story": "คุณต้องประเมินความน่าเชื่อถือของหนังสือรับรองการทำงานและรายได้",
-      "visual": [
-        "📑",
-        "💼",
-        "☎️",
-        "🏢",
-        "🔎"
-      ],
-      "showCustomerProfile": false,
-      "actionQuestion": "หากคุณเป็น Credit Analyst คุณจะดำเนินการอย่างไร?",
-      "actions": [
-        "เชื่อถือได้ ใช้ประกอบอนุมัติได้",
-        "เชื่อบางส่วน แต่ต้อง Verify เพิ่ม",
-        "ไม่เชื่อถือและ Reject ทันที",
-        "ไม่ต้องใช้ เพราะลูกค้ารับเงินสด"
-      ],
-      "bestAction": 1,
-      "reasonQuestion": "เลือกเหตุผลประกอบการตัดสินใจ",
-      "reasons": [
-        "เบอร์โทรศัพท์ไม่ตรงกับหน้า App",
-        "ชื่อบริษัทไม่ตรงกับหน้า App",
-        "ปีเริ่มงานไม่สอดคล้องกับอายุงาน",
-        "วันที่ออกหนังสือรับรองผิดปกติ",
-        "ควรตรวจผู้ลงนามและตราประทับบริษัท"
-      ],
-      "bestReasons": [
-        0,
-        1,
-        2,
-        3,
-        4
-      ],
-      "feedback": "ควรเชื่อบางส่วนแต่ต้อง Verify เพิ่ม เพราะข้อมูลต้องสัมพันธ์กับใบสมัครและนายจ้างจริง",
-      "tip": "คิดแบบ Credit Analyst: Observe → Analyze → Decide → Justify",
-      "image": "assets/documents/M07.png",
-      "documentLabel": "Employment / Income Certificate"
-    },
-    {
-      "id": "M08",
-      "icon": "📊",
-      "thaiTitle": "สรุปจุดแข็งและจุดเสี่ยง",
-      "title": "Risk Summary",
-      "competency": "การสรุปความเสี่ยง",
-      "story": "หลังตรวจเอกสาร คุณต้องแยก Strength และ Risk เพื่อเตรียมเสนอ Credit Manager",
-      "visual": [
-        "📊",
-        "✅",
-        "⚠️",
-        "🧠",
-        "📌"
-      ],
-      "showCustomerProfile": false,
-      "actionQuestion": "หากคุณเป็น Credit Analyst คุณจะดำเนินการอย่างไร?",
-      "actions": [
-        "มี Risk Grade N0 จึงสรุปว่าเสี่ยงต่ำทั้งหมด",
-        "มีทั้งจุดแข็งและจุดที่ต้อง Verify เพิ่ม",
-        "รายได้เงินสดต้อง Reject ทันที",
-        "เอกสารครบจึงไม่ต้องสรุป Risk"
-      ],
-      "bestAction": 1,
-      "reasonQuestion": "เลือกเหตุผลประกอบการตัดสินใจ",
-      "reasons": [
-        "Risk Grade N0 เป็นข้อมูลเชิงบวก",
-        "รายได้เงินสดต้องมีหลักฐานรองรับ",
-        "ไม่พบประกันสังคมควร Verify",
-        "เอกสารหลายจุดต้องตรวจความสอดคล้อง",
-        "ข้อมูลที่ไม่เกี่ยวกับการชำระหนี้ควรให้น้ำหนักสูง"
+        "ควรระบุพฤติกรรมหรือข้อมูลที่ต้องตรวจเชิงลึก",
+        "ข้อมูลรายได้เงินสดและนายจ้างควรเชื่อมกับ KYC",
+        "เอกสาร KYC ใช้บันทึก Warning Sign",
+        "ควรอธิบายเหตุผลในช่องอื่น ๆ หากมีประเด็น",
+        "เอกสารครบจึงไม่ต้อง KYC"
       ],
       "bestReasons": [
         0,
@@ -351,51 +291,42 @@
         2,
         3
       ],
-      "feedback": "ควรสรุปทั้งจุดแข็งและจุดที่ต้อง Verify เพิ่ม เพื่อให้การตัดสินใจสมดุลและเป็นมืออาชีพ",
-      "tip": "คิดแบบ Credit Analyst: Observe → Analyze → Decide → Justify",
-      "image": "assets/documents/M08.png",
-      "documentLabel": "Risk Summary Evidence"
+      "feedback": "ควรระบุประเด็นที่ต้องตรวจเชิงลึก เพราะ KYC เป็นเครื่องมือจับ Warning Sign ไม่ใช่แค่เอกสารแนบ",
+      "hint": "KYC ต้องสะท้อนจุดที่น่าสงสัยจาก Customer Profile และเอกสารประกอบ"
     },
     {
       "id": "M09",
-      "icon": "⚖️",
-      "thaiTitle": "นำเสนอ Credit Committee",
-      "title": "Final Credit Committee",
+      "icon": "📑",
+      "thaiTitle": "ตรวจหนังสือรับรองรายได้และสรุป Recommendation",
+      "title": "Income Certificate & Final Recommendation",
       "competency": "การตัดสินใจเชิงเครดิต",
-      "story": "ถึงเวลาสรุป Recommendation ต่อ Credit Manager",
-      "visual": [
-        "⚖️",
-        "👨‍💼",
-        "📊",
-        "🧠",
-        "🏁"
-      ],
-      "showCustomerProfile": false,
-      "actionQuestion": "หากคุณเป็น Credit Analyst คุณจะดำเนินการอย่างไร?",
+      "story": "คุณตรวจหนังสือรับรองรายได้และต้องสรุป Recommendation ต่อ Credit Manager",
+      "image": "assets/documents/doc_10.png",
+      "documentLabel": "Income Certificate",
+      "actionQuestion": "หลังตรวจเอกสารรายได้ คุณจะเสนอแนวทางใด?",
       "actions": [
         "Proceed with Conditions",
         "Hold / Request Additional Information",
         "Reject",
-        "Escalate to Supervisor"
+        "Escalate to Supervisor โดยไม่สรุปเหตุผล"
       ],
       "bestAction": 1,
-      "reasonQuestion": "เลือกเหตุผลประกอบการตัดสินใจ",
+      "reasonQuestion": "เหตุผลที่เหมาะสมคืออะไร?",
       "reasons": [
-        "ข้อมูลรายได้ยังต้อง Verify",
-        "เอกสารหลายชุดมีจุดไม่สอดคล้อง",
-        "KYC มีประเด็นต้องตรวจเชิงลึก",
-        "ข้อมูลเพียงพอสำหรับ Approve ทันที",
-        "ควร Reject โดยไม่ต้องขอข้อมูลเพิ่ม"
+        "หนังสือรับรองรายได้ต้องตรวจผู้ลงนาม/เบอร์โทร/นายจ้าง",
+        "รายได้รับเงินสดต้องมีหลักฐานสนับสนุนเพิ่มเติม",
+        "ข้อมูลจากใบสมัคร แผนที่ และ KYC ยังต้องเชื่อมโยงกัน",
+        "ควรสรุป Missing Information ก่อนตัดสินใจ",
+        "มีหนังสือรับรองแล้วจึง Approve ได้ทันที"
       ],
       "bestReasons": [
         0,
         1,
-        2
+        2,
+        3
       ],
-      "feedback": "Recommendation ที่เหมาะสมคือ Hold / Request Additional Information เพราะยังมีประเด็นสำคัญที่ต้อง Verify",
-      "tip": "คิดแบบ Credit Analyst: Observe → Analyze → Decide → Justify",
-      "image": "assets/documents/M09.png",
-      "documentLabel": "Final Committee Evidence"
+      "feedback": "Recommendation ที่เหมาะสมคือ Hold / Request Additional Information เพราะยังมีประเด็นสำคัญที่ต้อง Verify ให้ครบก่อนเสนออนุมัติ",
+      "hint": "Final Decision ที่ดีต้องชั่งน้ำหนัก Strength, Risk และ Missing Information"
     }
   ]
 }
