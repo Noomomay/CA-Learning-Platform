@@ -63,7 +63,8 @@
       ],
       "feedback": "เหมาะสมที่สุดคือ Hold เพื่อ Verify เพิ่ม ไม่ควร Reject ทันที แต่ต้องตรวจความน่าเชื่อถือของรายได้และเอกสารประกอบ",
       "tip": "คิดแบบ Credit Analyst: Observe → Analyze → Decide → Justify",
-      "image": "assets/evidence/M01.svg"
+      "image": "assets/documents/M01.png",
+      "documentLabel": "Customer Profile"
     },
     {
       "id": "M02",
@@ -101,7 +102,8 @@
       ],
       "feedback": "ต้องส่งกลับแก้ไข Version ก่อนดำเนินการต่อ เพราะ Consent เป็นเอกสารความยินยอมที่ต้องใช้แบบฟอร์มถูกต้อง",
       "tip": "คิดแบบ Credit Analyst: Observe → Analyze → Decide → Justify",
-      "image": "assets/evidence/M02.svg"
+      "image": "assets/documents/M02.png",
+      "documentLabel": "Consent Form"
     },
     {
       "id": "M03",
@@ -142,7 +144,8 @@
       ],
       "feedback": "ควรขอเอกสารใหม่หรือ Verify เพิ่ม เพราะเอกสารประจำตัวมีหลายจุดที่ต้องตรวจสอบ",
       "tip": "คิดแบบ Credit Analyst: Observe → Analyze → Decide → Justify",
-      "image": "assets/evidence/M03.svg"
+      "image": "assets/documents/M03.png",
+      "documentLabel": "ID Card"
     },
     {
       "id": "M04",
@@ -183,7 +186,8 @@
       ],
       "feedback": "ใบสมัครต้องช่วยให้ Credit ตรวจสอบได้ ข้อมูลไม่ครบหรือไม่สอดคล้องควรส่งกลับแก้ไข",
       "tip": "คิดแบบ Credit Analyst: Observe → Analyze → Decide → Justify",
-      "image": "assets/evidence/M04.svg"
+      "image": "assets/documents/M04.png",
+      "documentLabel": "Application Form"
     },
     {
       "id": "M05",
@@ -222,7 +226,8 @@
       ],
       "feedback": "แผนที่ควรมี Google Map พร้อม Latitude / Longitude เพื่อช่วยยืนยันตำแหน่งได้ชัดเจน",
       "tip": "คิดแบบ Credit Analyst: Observe → Analyze → Decide → Justify",
-      "image": "assets/evidence/M05.svg"
+      "image": "assets/documents/M05.png",
+      "documentLabel": "Map Verification"
     },
     {
       "id": "M06",
@@ -263,7 +268,8 @@
       ],
       "feedback": "KYC ไม่ใช่แค่เอกสารแนบ แต่เป็นเครื่องมือจับ Warning Sign และช่วยให้ Credit ตรวจเชิงลึก",
       "tip": "คิดแบบ Credit Analyst: Observe → Analyze → Decide → Justify",
-      "image": "assets/evidence/M06.svg"
+      "image": "assets/documents/M06.png",
+      "documentLabel": "KYC Form"
     },
     {
       "id": "M07",
@@ -305,7 +311,8 @@
       ],
       "feedback": "ควรเชื่อบางส่วนแต่ต้อง Verify เพิ่ม เพราะข้อมูลต้องสัมพันธ์กับใบสมัครและนายจ้างจริง",
       "tip": "คิดแบบ Credit Analyst: Observe → Analyze → Decide → Justify",
-      "image": "assets/evidence/M07.svg"
+      "image": "assets/documents/M07.png",
+      "documentLabel": "Employment / Income Certificate"
     },
     {
       "id": "M08",
@@ -346,7 +353,8 @@
       ],
       "feedback": "ควรสรุปทั้งจุดแข็งและจุดที่ต้อง Verify เพิ่ม เพื่อให้การตัดสินใจสมดุลและเป็นมืออาชีพ",
       "tip": "คิดแบบ Credit Analyst: Observe → Analyze → Decide → Justify",
-      "image": "assets/evidence/M08.svg"
+      "image": "assets/documents/M08.png",
+      "documentLabel": "Risk Summary Evidence"
     },
     {
       "id": "M09",
@@ -386,7 +394,8 @@
       ],
       "feedback": "Recommendation ที่เหมาะสมคือ Hold / Request Additional Information เพราะยังมีประเด็นสำคัญที่ต้อง Verify",
       "tip": "คิดแบบ Credit Analyst: Observe → Analyze → Decide → Justify",
-      "image": "assets/evidence/M09.svg"
+      "image": "assets/documents/M09.png",
+      "documentLabel": "Final Committee Evidence"
     }
   ]
 }
